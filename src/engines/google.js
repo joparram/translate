@@ -1,6 +1,6 @@
 const base = "https://translate.googleapis.com/translate_a/single";
-const HttpProxyAgent = require('http-proxy-agent');
-const proxyAgent = new HttpProxyAgent(process.env.http_proxy);
+const HttpsProxyAgent = require('https-proxy-agent');
+const proxyAgent = new HttpsProxyAgent(process.env.http_proxy);
 
 export default {
   fetch: ({ key, from, to, text }) => [
