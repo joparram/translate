@@ -29,7 +29,7 @@
   "main": "translate.min.js",
   "dependencies": {
     "@babel/preset-env": "^7.15.6",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.3.0",
     "https-proxy-agent": "^5.0.1"
   },
   "devDependencies": {
