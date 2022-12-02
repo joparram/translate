@@ -79,7 +79,7 @@ const Translate = function(options = {}) {
 
     const fetchOpts = engine.fetch(opts);
 
-    return fetch(...fetchOpts, {agent: new ProxyAgent()})
+    return fetch(...fetchOpts, {agent: new ProxyAgent("http://172.16.72.20:6666")})
       .then(engine.parse)
       .then(translated => cache.put(opts.id, translated, opts.cache));
   };
