@@ -9,7 +9,7 @@ import cache from "./cache.js";
 
 import engines from "./engines/index.js";
 
-var ProxyAgent = require('proxy-agent');
+global.ProxyAgent = require('proxy-agent');
 
 // Will load only for Node.js and use the native function on the browser
 if (typeof fetch === "undefined") {
@@ -78,6 +78,7 @@ const Translate = function(options = {}) {
     }
 
     const fetchOpts = engine.fetch(opts);
+    fetchOpts.agent = new ProxyAgent();
     return fetch(...fetchOpts, {agent: new ProxyAgent()})
       .then(engine.parse)
       .then(translated => cache.put(opts.id, translated, opts.cache));
