@@ -1,11 +1,7 @@
 const base = "https://translate.googleapis.com/translate_a/single";
-var ProxyAgent = require('proxy-agent');
-var agent = new ProxyAgent();
-
 export default {
   fetch: ({ key, from, to, text }) => [
-    `${base}?client=gtx&sl=${from}&tl=${to}&dt=t&q=${encodeURI(text)}`,
-    {agent}
+    `${base}?client=gtx&sl=${from}&tl=${to}&dt=t&q=${encodeURI(text)}`
   ],
   parse: res =>
     res.json().then(body => {
