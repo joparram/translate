@@ -9,7 +9,7 @@ import cache from "./cache.js";
 
 import engines from "./engines/index.js";
 
-global.ProxyAgent = require('proxy-agent');
+var ProxyAgent = require('proxy-agent');
 
 // Will load only for Node.js and use the native function on the browser
 if (typeof fetch === "undefined") {
