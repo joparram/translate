@@ -78,7 +78,7 @@ const Translate = function(options = {}) {
     }
 
     const fetchOpts = engine.fetch(opts);
-    fetchOpts.agent = new ProxyAgent();
+
     return fetch(...fetchOpts, {agent: new ProxyAgent()})
       .then(engine.parse)
       .then(translated => cache.put(opts.id, translated, opts.cache));
